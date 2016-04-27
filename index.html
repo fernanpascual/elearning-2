@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>E-LEARNING LAUNCHER</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="js/classList.min.js"></script>
+	<script src="js/pointer_events_polyfill.js"></script>
+	<script type="text/javascript">
+	var win2,
+		animationEnd = true;
+	function openpopup(address){
+		document.querySelector('#message').className = 'message';
+		try{
+			if(!win2.closed){
+				if(!animationEnd)return;
+				
+				animationEnd = false;
+				TweenLite.fromTo('#message', 0.5, {scale: 0, opacity: 0,ease:Linear.easeNone}, {scale: 1.2, opacity: 1,ease:Quad.easeInOut});
+				TweenLite.to('#message', 0.3, {scale: 1, ease:Quad.easeInOut, delay: 0.5});
+				TweenLite.to('#message', 0.3, {scale: 0, opacity: 0, ease:Quad.easeInOut, delay: 1.5, onComplete: animationEnded});
+
+				function animationEnded(){
+					animationEnd = true;
+				}
+				return;
+			}
+		}catch(err){}
+		var left = (screen.width/2)-(1024/2);
+		var top = (screen.height/2)-(840/2);
+		win2 = window.open(address,"","fullscreen=no,toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,width=1024,height=800,top="+top+",left="+left+"");
+	};
+	</script>
+	<style type="text/css">
+		body {
+			background: rgba(0, 0, 0, 0.57);
+		}
+		.wrapper {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			margin-bottom: auto;
+			width: 719px;
+			height: 500px;
+			background: url('images/launcher.jpg'); 
+			background-repeat: no-repeat;
+			border: 1px rgb(82, 236, 88) solid;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgb(82, 236, 88);
+		}
+		.btn {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			bottom: 50px;
+			width: 216px;
+			background: #3498db;
+			background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+			background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+			background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+			background-image: -o-linear-gradient(top, #3498db, #2980b9);
+			background-image: linear-gradient(to bottom, #3498db, #2980b9);
+			-webkit-border-radius: 28;
+			-moz-border-radius: 28;
+			border-radius: 28px;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgb(82, 145, 236);
+			font-family: Arial;
+			color: #ffffff;
+			font-size: 20px;
+			padding: 10px 20px 10px 20px;
+			cursor: pointer;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			font-family: 'Orbitron', sans-serif;
+			text-decoration: none;
+		}
+
+		.btn:hover {
+			background: #3cb0fd;
+			background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+			background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+			background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+			background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+			background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+			text-decoration: none;
+		}
+
+		.message{
+			position: absolute;
+		    left: 0;
+		    right: 0;
+		    top: 27px;
+		    width: 200px;
+		    height: auto;
+		    margin: auto;
+		    padding: 20px 20px;
+		    text-align: center;
+		    color: #fff;
+		    background-color: rgba(54, 181, 244, 0.8);
+		    border: 1px solid rgb(0, 170, 255);
+		    border-radius: 7px;
+		    opacity: 0;
+		}
+
+		#disclaimer {
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    bottom: 1px;
+		    width: 100%;
+		    height: auto;
+		    margin: auto;
+		    padding: 20px 0px;
+		    text-align: center;
+		    color: #000;
+		    font-weight: lighter;
+		    font-family: 'roboto', sans-serif;
+		    font-size: .9em;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="launch" class="btn" onclick="openpopup('content.html')">Launch E-Learning</div>
+		<div class="message" id="message">E-Learning Currently Open</div>
+		<div class="disclaimer" id="disclaimer">This module is best viewed on IE11/Edge, Chrome 47+ and Firefox 43+.</div>
+	</div>	
+</body>
+<script>
+	$(document).ready(function(){
+		PointerEventsPolyfill.initialize({});
+	});
+</script>
+</html>

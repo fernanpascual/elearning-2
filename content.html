@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>E-Learning Module</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="js/classList.min.js"></script>
+	<script src="js/pointer_events_polyfill.js"></script>
+	<script src="js/preloadjs-0.6.2.min.js"></script>
+	<script src="js/preloadjs-NEXT.min.js"></script>
+</head>
+<body>
+	<div class="preloader">
+		<div class="loading-gears">
+			<div class="g1 gears"></div>
+			<div class="g2 gears"></div>
+			<div class="g3 gears"></div>
+			<div class="g4 gears"></div>
+			<div class="gE gears"></div>
+		</div>
+		<div class="progress-bar">
+			<div class="mask">
+				<div class="progress"></div>
+				<div class="progress-text">Intitializing Content...</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-wrapper">
+		<header id="header">
+			<div class="wrapper">
+				<div class="main-title">COGNIZANT E-LEARNING CENTER</div>
+			</div>
+		</header>
+		<section class="content">
+			<aside class="chapters">
+				<header>CHAPTERS</header>
+				<nav>
+				</nav>
+			</aside>
+			<div class="elearning-content">
+				<div class="controls">
+					<div class="progress">
+						<div id="progress-title"></div>
+						<div id="progress-page"></div>
+					</div>
+					<div id="sound-mute"></div>
+					<div id="sound-unmute"></div>
+					<div id="play"></div>
+					<div id="pause"></div>
+				</div>
+				<div id="paper"></div>
+				<iframe id="iframe" src="pages/page0.html"></iframe>
+				<div id="mrlee"></div>
+				<div id="previous"></div>
+				<div id="next"></div>
+				<div id="closeX"></div>
+				<div id="pointer"></div>
+			</div>			
+		</section>
+		<footer>
+			<div class="wrapper">
+				<div class="footer-copyright">© Cognizant 2015</div>
+				<div class="footer-logo">
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+<script>
+	document.querySelector('.elearning-content').style.height = document.querySelector('aside.chapters').offsetHeight + "px";
+	$(document).ready(function(){
+		PointerEventsPolyfill.initialize({});
+
+		TweenMax.to("#pointer", .5, {scale:.8, repeat:-1, yoyo:true, ease:Linear.easeNone});
+		TweenMax.to(".progress", 10, {'background-position': '1000px 0px', repeat:-1, yoyo:false, ease:Linear});
+		TweenMax.to(".g1", 3, {rotation: 360, repeat:-1, yoyo:false, ease:Linear.easeNone});
+		TweenMax.to(".g2", 3, {rotation: 360, repeat:-1, yoyo:false, ease:Linear.easeNone});
+		TweenMax.to(".g3", 3, {rotation: -360, repeat:-1, yoyo:false, ease:Linear.easeNone});
+		TweenMax.to(".g4", 3, {rotation: 360, repeat:-1, yoyo:false, ease:Linear.easeNone});
+	});
+</script>
+<script type="text/javascript" src="js/preload.js"></script>
+</html>

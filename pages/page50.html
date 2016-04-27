@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/revised.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<style>
+		.image1{
+			position: absolute;
+			top: 220px;
+			left: 652px;
+			width: 210px;
+			height: 70px;
+			background: url('images/signalLight2.png');
+			background-repeat: no-repeat;
+			background-size: auto 70px;
+		}
+		.image2{
+		    position: absolute;
+		    top: 315px;
+		    left: 723px;
+		    width: 70px;
+		    height: 70px;
+		    background: url('images/yellow.png');
+		    background-repeat: no-repeat;
+		    background-size: auto 70px;
+		}
+		.image3{
+		    position: absolute;
+		    top: 450px;
+		    left: 723px;
+		    width: 70px;
+		    height: 70px;
+		    background: url('images/green.png');
+		    background-repeat: no-repeat;
+		    background-size: auto 70px;
+		}
+
+		.image1,.image2,.image3,.animated{
+			opacity: 0;
+		}
+		
+		li,p{
+			font-size: 28px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+
+		<header>
+			<div class="headline-container">
+				<h2>What would You Do? Situation 1</h2>
+			</div>
+		</header>
+		<section>
+			<div class="container">
+				<div class="content">
+					<p style="color:#8BC34A; font-style:italic">She sits down behind her desk. She sits up straight in her chair. She claps her hands together and with little expression on her face says,<br>&nbsp“What can I do for you?”</p>
+					<p class="animated">1. What nonverbal signal is she communicating?</p>
+					<p class="animated">Yellow (Caution ) Non verbal Signal</p>
+					<p class="animated">2. How would you respond non verbally</p>
+					<p class="animated">Green (Acceptance ) Non verbal Signal</p>
+					<div class="image1"></div>
+					<div class="image2"></div>
+					<div class="image3"></div>
+				</div>
+			</div>
+		</section>
+		<script>
+			setTimeout(function(){
+				TweenMax.to(".animated:nth-child(2)", 1, {opacity:1, ease:Linear.easeNone});
+				TweenMax.to(".image1", 1, {opacity:1, ease:Linear.easeNone});
+			},14000)
+			setTimeout(function(){
+				TweenMax.to(".animated:nth-child(3)", 1, {opacity:1, ease:Linear.easeNone});
+				TweenMax.to(".image2", 1, {opacity:1, ease:Linear.easeNone});
+			},18000)
+			setTimeout(function(){
+				TweenMax.to(".animated:nth-child(4)", 1, {opacity:1, ease:Linear.easeNone});
+			},22000)
+			setTimeout(function(){
+				TweenMax.to(".animated:nth-child(5)", 1, {opacity:1, ease:Linear.easeNone});
+				TweenMax.to(".image3", 1, {opacity:1, ease:Linear.easeNone});
+			},26000)
+		</script>
+		<footer>
+
+		</footer>
+	</div>
+</body>
+</html>

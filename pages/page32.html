@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>quiz</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+	<link href='css/quiz.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<h1>Quiz</h1>
+		<h2 class="question" style="margin-top: 50px;"></h2>
+		<div class="choices">
+		</div>
+		<div class="message hide" id="message">Message</div>
+	</div>
+</body>
+<script>
+	var quiz = {
+		"question": "Marvel is a skillful sales executive and converts every customer to be a happy customer for his products. The art of his best selling technique is objection handling.<br><br>Identify the customer resistance types for which Marvel would have effectively handled objections.",
+		"choices": {
+			"1": "A. Misconception",
+			"2": "B. Lack of interest",
+			"3": "C. Real objection",
+			"4": "D. Skepticism",
+			"5": "E. None of the above",
+			"6": "F. a, b, c and d"
+		},
+		"answer":"6"
+	};
+</script>
+<script type="text/javascript" src="js/quiz.js"></script>
+</html>

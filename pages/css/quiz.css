@@ -1,0 +1,164 @@
+
+	body{
+		margin: 0;
+		padding:0;
+	}
+	.container{
+		position: absolute;
+		width: 870px;
+   	height: 652px;
+		background-color: transparent;
+		font-family: 'Roboto', sans-serif;
+		color: #3d97bb;
+	}
+	.container > *{
+		margin-left: 50px;
+		margin-right: 100px;
+	}
+	h1{
+		font-family: 'Roboto Slab', serif;
+		font-size: 30px;
+		line-height: 1em;
+		margin-top: 60px;
+	}
+	.question{
+		font-size: 20px;
+		font-weight: 700;
+		font-family: 'Roboto Slab', serif;
+		color: #595959;
+	}
+	div.choices{
+		pointer-events: none;
+		margin-top: 43px;
+	}
+	div.choices > div{
+		display: table;
+	  padding-top: 10px;
+	  padding-bottom: 8px;
+	  cursor: pointer;
+		color: #595959;
+		padding-left: 7px;
+		pointer-events: auto;
+	}
+	div.choices > div:hover{
+		background-color: rgba(189,189,189,0.8);
+		border-radius: 5px;
+	}
+	div.choices > div > span.radio,
+	div.choices > div > span.label{
+		display: table-cell;
+		pointer-events: none;
+	}
+	div.choices > div > span.radio{
+	}
+	div.choices > div > span.label{
+		max-width: 600px;
+		min-width: 600px;
+	}
+	div.choices > div > span.radio > span{
+		display: inline-block;
+		width: 0.875em;
+		height: 0.875em;
+		margin: 0.1em 0.5em 0.25em 0.25em;
+		border: 0.0625em solid rgb(192,192,192);
+		border-radius: 0.25em;
+		background: rgb(224,224,224);
+		background-image: -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+		background-image: -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+		background-image: -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+		background-image: -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+		background-image: linear-gradient(rgb(240,240,240),rgb(224,224,224));
+		vertical-align: top;
+	}
+	div.choices > div.selected > span.radio > span > span{
+		display: block;
+		width: 0.5em;
+		height: 0.5em;
+		margin: 0.125em;
+		border: 0.0625em solid rgb(229,57,53);
+		border-radius: 0.125em;
+		background: rgb(244,67,54);
+		background-image: -moz-linear-gradient(rgb(239,154,154),rgb(229,115,115));
+		background-image: -ms-linear-gradient(rgb(239,154,154),rgb(229,115,115));
+		background-image: -o-linear-gradient(rgb(239,154,154),rgb(229,115,115));
+		background-image: -webkit-linear-gradient(rgb(239,154,154),rgb(229,115,115));
+		background-image: linear-gradient(rgb(239,154,154),rgb(229,115,115));
+	}
+	div.choices > div.answer.selected > span.radio > span > span{
+		display: block;
+		width: 0.5em;
+		height: 0.5em;
+		margin: 0.125em;
+		border: 0.0625em solid rgb(115,153,77);
+		border-radius: 0.125em;
+		background: rgb(153,204,102);
+		background-image: -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+		background-image: -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+		background-image: -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+		background-image: -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+		background-image: linear-gradient(rgb(179,217,140),rgb(153,204,102));
+	}
+	.message{
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 50px;
+		width: 200px;
+		height: auto;
+		margin: auto;
+		padding: 20px 20px;
+		text-align: center;
+		color: #fff;
+		background-color: rgba(244,67,54,0.8);
+		border: 1px solid rgb(244,67,54);
+		border-radius: 7px;
+		opacity: 0;
+	}
+	.message.show{
+		opacity: 1;
+	}
+	.message.show.correct{
+		background-color: rgba(139,195,74,0.8);
+		border: 1px solid rgb(139,195,74);
+	}
+	.message.wrong{
+		background-color: rgba(244,67,54,0.8);
+		border: 1px solid rgb(244,67,54);
+	  -webkit-animation-name: bounceIn;
+	  -webkit-animation-duration: 1000ms;
+	  -webkit-animation-fill-mode: forwards;
+	}
+	.message.correct{
+		background-color: rgba(139,195,74,0.8);
+		border: 1px solid rgb(139,195,74);
+	  -webkit-animation-name: bounceIn;
+	  -webkit-animation-duration: 1000ms;
+	  -webkit-animation-delay: 250ms;
+	  -webkit-animation-fill-mode: forwards;
+	}
+	@-webkit-keyframes bounceIn {
+	  0%, 20%, 40%, 60%, 80%, 100% {
+	    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	  }
+	  0% {
+	    opacity: 0;
+	    -webkit-transform: perspective(1px) scale3d(.3, .3, .3);
+	  }
+	  20% {
+	    -webkit-transform: perspective(1px) scale3d(1.1, 1.1, 1.1);
+	  }
+	  40% {
+	    -webkit-transform: perspective(1px) scale3d(.9, .9, .9);
+	  }
+	  60% {
+	    opacity: 1;
+	    -webkit-transform: perspective(1px) scale3d(1.03, 1.03, 1.03);
+	  }
+	  80% {
+	    -webkit-transform: perspective(1px) scale3d(.95, .95, .95);
+	  }
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: perspective(1px) scale3d(1, 1, 1);
+	  }
+	}
